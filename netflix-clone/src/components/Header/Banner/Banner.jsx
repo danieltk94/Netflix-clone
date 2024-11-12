@@ -43,12 +43,11 @@ const Banner = () => {
                 <img src={play} alt="Play" />
                 <p>Play</p>
             </button>
-            <button className="banner__button banner__info">
-                <img src={info} alt="info" />
-                <p>More Info</p>
-            </button>
+            <button className='banner__button '>My List</button>
             </div>
-            {/* <h1 className="banner__description">{truncate(movie.overview, 150)}</h1> */}
+            <div className="banner__description">
+                {/* <p>{String(movie?.overview).substring(0, 150) + "..."}</p> */}
+            </div>
         </div>
         <div className="banner__fadeBottom" />
         </div>

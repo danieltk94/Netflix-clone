@@ -86,7 +86,7 @@
     }
     
     .banner__fadeBottom {
-        height: 55vh;
+        /* height: 55vh; */
         background-image: linear-gradient(
         180deg,
         transparent,

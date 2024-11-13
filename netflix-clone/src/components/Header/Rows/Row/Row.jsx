@@ -9,18 +9,20 @@ const Row = ({title, fetchUrl, isLargeRow, trailerUrl, activeRow, rowId, onSetTr
     const [movies, setMovies] = useState([]);
     const [movieTrailerUrl, setMovieTrailerUrl] = useState("");
 
+const base_url = "https://image.tmdb.org/t/p/original";
+
         useEffect(() => {
-            async function fetchData() {
-            try {
-                const request = await axios.get(fetchUrl);
-                setMovies(request.data.results || []);
-                // console.log(request.data.results);
-            } catch (error) {
-                console.error("Failed to fetch data:", error);
-            }
-            }
-            fetchData();
-        }, [fetchUrl]);
+    (async () => {
+    try {
+        const request = await axios.get(fetchUrl);
+        setMovies(request.data.results);
+    } catch (error) {
+        console.log("error", error);
+    }
+    })();
+}, [fetchUrl]);
+
+    // each time when new fetchurl arrives it will update 
             //a function that when a user clicks on a movie poster, this function is called to handle
     const handleClick = (movie) => {
         // If a trailer is already playing and clicked again, close it

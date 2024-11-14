@@ -84,7 +84,7 @@ const RowList = () => {
         onSetTrailer={handleSetTrailer}
       />
       <Row
-        title="Documentaries Movies"
+        title="Documentaries"
         fetchUrl={requests.fetchDocumentaries}
         isLargeRow={false}
         trailerUrl={trailerUrl}

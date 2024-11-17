@@ -100,6 +100,8 @@
   }
 }
 
+/* Media Queries for Tablet and Mobile Views */
+
 /* Mobile View */
 @media (max-width: 480px) {
   .header_outer_container {
@@ -110,11 +112,25 @@
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
+    display: none; /* Initially hide the menu */
+    width: 100%;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    background-color: #000;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+  }
+
+  .header_left .header_nav.active {
+    display: flex; /* Show the menu when active */
+    transform: translateY(0);
   }
 
   .header_left .header_nav li {
     padding: 5px 0;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .header_left .header_nav img {
@@ -131,5 +147,20 @@
   .header_right .header_nav li {
     padding: 0 8px;
     font-size: 12px;
+  }
+
+  /* Hamburger menu icon */
+  .menu_icon {
+    display: block; /* Show menu icon on mobile */
+    cursor: pointer;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1001;
+  }
+
+  .menu_icon svg {
+    color: white;
+    font-size: 30px;
   }
 }
